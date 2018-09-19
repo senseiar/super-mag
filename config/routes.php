@@ -6,7 +6,8 @@ return array(
     
     'catalog' => 'catalog/index',
 
-    'category/([0-9]+)' => 'catalog/category/$1', 
-    
+    'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',
+    'category/([0-9]+)' => 'catalog/category/$1',
+     
     '' => 'site/index',
 );
