@@ -8,9 +8,22 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
-  position: relative;
   font-weight:400px;
+  margin-bottom: 50px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+.page-wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+* html .page-wrapper {
+    height: 100%;
+}
+.page-buffer {
+    height: 50px;
 }
 
 ul li {
@@ -263,7 +276,7 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(..template/images/home/searchicon.png);
+  background-image: url(/template/images/home/searchicon.png);
   background-repeat: no-repeat;
   background-position: 130px;
 }
@@ -346,7 +359,12 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  background: #F0F0E9;
+  background: #F0F0E8;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
 }
 
 
@@ -545,8 +563,7 @@ ul.sub-menu {
 }
 
 .footer-bottom {
-  background: #D6D6D0;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .footer-bottom p {
@@ -883,8 +900,8 @@ h2.title {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #696763;
   height: 34px;
+  color: #696763;
 }
 
 .productinfo img{
@@ -946,7 +963,7 @@ h2.title {
 
 
 
-.add-to-cart {
+.add-to-cart, .checkout {
   background:#F5F5ED;
   border: 0 none;
   border-radius: 0;
@@ -1455,7 +1472,7 @@ h2.title {
 
 
 .login-form form input, .signup-form form input {
-  background: #F0F0E9;
+  background: #ccc;
   border: medium none;
   color: #696763;
   display: block;
@@ -2526,3 +2543,7 @@ h2.title {
 }
 
 
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-inner .prev        { left: -33%; }
+.carousel-control.left,.carousel-control.right {background-image:none;}

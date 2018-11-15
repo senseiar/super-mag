@@ -25,6 +25,14 @@ class User
         return false;
     }
 
+    public static function checkPhone($phone) {
+        $pattern = "/^\+380\d{3}\d{2}\d{2}\d{2}$/";
+        if(preg_match($pattern, $phone)) {
+            return true;
+        }
+        return false;
+    }
+
     public static function checkPassword($password) {
         if(strlen($password) >= 6 ) {
             return true;
