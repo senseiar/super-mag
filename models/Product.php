@@ -15,7 +15,7 @@ class Product
         $productsList = array();
 
         $result = $db->query('SELECT id, name, price, image, is_new FROM product '
-        . 'WHERE status = "1"'
+        . 'WHERE status = "1" '
         . 'ORDER BY id DESC '
         . 'LIMIT ' . $count
         . ' OFFSET ' . $offset);
@@ -32,6 +32,31 @@ class Product
             $i++;
         }
         
+        return $productsList;
+    }
+
+    public static function getRecommendedProducts()
+    {
+        $db = Db::getConnection();
+
+        $productsList = array();
+
+        $result = $db->query('SELECT id, name, price, image, is_new FROM product '
+        . 'WHERE status = "1" AND is_recommended = "1" '
+        . 'ORDER BY id DESC');
+
+        $i = 0;
+
+        while ($row = $result->fetch()) {
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+            $productsList[$i]['image'] = $row['image'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['is_new'] = $row['is_new'];
+
+            $i++;
+        }
+
         return $productsList;
     }
     

@@ -20,8 +20,8 @@ return array(
     'user/login' => 'user/login',
     'user/logout' => 'user/logout',
 
+    'admin' => 'admin/index',
 
-    
     'cabinet/edit' => 'cabinet/edit',
     //'cabinet/history' => 'cabinet/history',
     'cabinet' => 'cabinet/index',

@@ -33,10 +33,13 @@ class Cart
             $productsInCart = $_SESSION['products'];
         }
 
-        if (array_key_exists($id, $productsInCart)) {
+        if (array_key_exists($id, $productsInCart)) 
+        {
             $productsInCart[$id]--;
-        } else {
-            $productsInCart[$id] = 1;
+        } 
+        if ($productsInCart[$id] == 0)
+        {
+            unset($productsInCart[$id]);
         }
         
         $_SESSION['products'] = $productsInCart;

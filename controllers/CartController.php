@@ -12,10 +12,7 @@ class CartController
 
     public function actionDelete($id)
     {
-        $result = Cart::deleteProduct($id);
-        if($result == false){
-        Cart::clear();
-        }
+        Cart::deleteProduct($id);
         header("Location: /cart");
     }
 
